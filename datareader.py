@@ -8,8 +8,8 @@ userid = 'userId'
 algs = ['PureSVD', 'PSI']
 alg_files = {'PureSVD': 'SVD', 'PSI': 'PSI', 'MP': 'MPRec', 'RND': 'RRec'}
 
-metrics = ['HR', 'MRR', 'COV']
-metric_files = {'HR': 'StepHirate', 'MRR': 'StepMRR', 'COV': 'COVRatio'}
+metrics = ['HR', 'MRR', 'Coverage']
+metric_files = {'HR': 'StepHirate', 'MRR': 'StepMRR', 'Coverage': 'COVRatio'}
 display_ranks = range(10, 100, 10)
 
 
@@ -39,12 +39,6 @@ def read_data(folder, label):
             data[alg][metric] = read_metric(alg, metric, folder, label)
             
     for metric in metrics:
-        # scores[metric]['long'] = (
-        #     pd.concat({alg:data[alg][metric] for alg in algs}, axis=1)
-        #     .stack(level=[0, 1])
-        #     .reset_index()
-        #     .rename(columns={'level_1': 'model', 'level_2': 'step', 0: metric, 'Rank': 'rank'})
-        # )
         scores[metric]['wide'] = (
             pd.concat({alg:data[alg][metric] for alg in algs}, axis=1)
             .stack(level=1)
