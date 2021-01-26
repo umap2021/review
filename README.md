@@ -40,31 +40,31 @@ source venv/Scripts/activate
 python -m pip install -r requirements.txt
 ```
 
-### Running
+### Running Script for All Dataset
 
 For Amazon Games:
 SVD:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='SVD' --data_path=AMZGamesDF.csv --df_='AMZG_' --n_tmonths=18 --n_train=10 --user_column='userId' --item_column='productId' --max_rank=80
 ```
 
 PSI:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='PSI' --data_path=AMZGamesDF.csv --df_='AMZG_' --n_tmonths=18 --n_train=10 --user_column='userId' --item_column='productId' --max_rank=80
 ```
 
 For Amazon Beauty:
 SVD:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='SVD' --data_path=AMZBeautyDF.csv --df_='AMZB_' --n_tmonths=18 --n_train=10 --user_column='userId' --item_column='productId' --max_rank=80
 ```
 
 PSI:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='PSI' --data_path=AMZBeautyDF.csv --df_='AMZB_' --n_tmonths=18 --n_train=10 --user_column='userId' --item_column='productId' --max_rank=80
 ```
 
@@ -74,13 +74,13 @@ For MovieLen:
 
 SVD:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='SVD' --data_path=MovieLenDF.csv --df_='ML_' --n_tmonths=14 --n_train=6 --user_column='userId' --item_column='movieId' --max_rank=80
 ```
 
 PSI:
 
-``bash
+```bash
 python Script_All_Algo.py --algorithm='PSI' --data_path=MovieLenDF.csv --df_='ML_' --n_tmonths=14 --n_train=6 --user_column='userId' --item_column='movieId' --max_rank=80
 ```
 
