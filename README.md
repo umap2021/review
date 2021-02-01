@@ -68,8 +68,28 @@ PSI:
 python Script_All_Algo.py --algorithm='PSI' --data_path=AMZBeautyDF.csv --df_='AMZB_' --n_tmonths=18 --n_train=10 --user_column='userId' --item_column='productId' --max_rank=80
 ```
 
+### Remark on MovieLen
+we have presented two(2) results for MovieLen in this repo :
+- 'Result for MovieLen'(containing results generated with the whole movieLen Dataset)
+- 'Results for ML_new' (containing results generated with the movieLen Dataset with filtered ratings) 
+- The correct results that correspond with the data description in the paper is the "Results for ML_new"
 
-For MovieLen:
+
+For ML_new (MovieLen with filtered Ratings):
+
+SVD:
+
+```bash
+python Script_All_Algo.py --algorithm='SVD' --data_path=MovieLenDF_new.csv --df_='ML_' --n_tmonths=14 --n_train=6 --user_column='userId' --item_column='movieId' --max_rank=80
+```
+
+PSI:
+
+```bash
+python Script_All_Algo.py --algorithm='PSI' --data_path=MovieLenDF_new.csv --df_='ML_' --n_tmonths=14 --n_train=6 --user_column='userId' --item_column='movieId' --max_rank=80
+```
+
+For MovieLen (the whole Dataset):
 ```unzip MovieLenDF.zip```
 
 SVD:
@@ -83,5 +103,6 @@ PSI:
 ```bash
 python Script_All_Algo.py --algorithm='PSI' --data_path=MovieLenDF.csv --df_='ML_' --n_tmonths=14 --n_train=6 --user_column='userId' --item_column='movieId' --max_rank=80
 ```
+
 
 
